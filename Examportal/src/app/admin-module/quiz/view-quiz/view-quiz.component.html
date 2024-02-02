@@ -1,0 +1,40 @@
+<div class="view-quiz-body">
+  <div class="text-center">
+    <h1><b>Quizes</b></h1>
+  </div>
+  <div class="back-btn" (click)="back()">
+    <span class="material-symbols-outlined">
+      arrow_back_ios
+      </span>
+  </div>
+  <div class="list-quiz">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th><b>Sr.No</b></th>
+                <th><b>Quiz Id</b></th>
+                <th><b>Title</b></th>
+                <th><b>Description</b></th>
+                <th><b>No Of Questions</b></th>
+                <th><b>Category Id</b></th>
+                <th><b>Action</b></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of quizlist; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{item.id}}</td>
+                <td>{{item.title}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.questions.length}}</td>
+                <td>{{item.category.id}}</td>
+                <td><button class="btn btn-outline-success" (click)="update(item.id)" >Update</button></td>
+
+            </tr>
+        </tbody>
+    </table>
+    <div class="text-center">
+      <button class="btn btn-outline-primary" (click)="addNewQuiz()">Add Quiz</button>
+     </div>
+  </div>
+</div>

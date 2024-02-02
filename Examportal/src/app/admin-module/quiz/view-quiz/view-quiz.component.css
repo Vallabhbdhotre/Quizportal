@@ -1,0 +1,12 @@
+.back-btn{
+    display: inline-block;
+    padding: 5px;
+    /* background-color: aqua; */
+    cursor: pointer;
+    margin: 2rem;
+}
+.back-btn:hover{
+    color: white;
+    border-radius: 5px;
+    background-color: rgb(128, 124, 124);
+}

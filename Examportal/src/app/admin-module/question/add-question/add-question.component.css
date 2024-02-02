@@ -1,0 +1,34 @@
+.question-form-body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.question-form{
+    position: absolute;
+    top: 3rem;
+    padding: 1rem;
+    width: 50%;
+    height: 80%;
+    border: 2px solid black;
+    border-radius: 1rem;
+}
+.form-group{
+    margin-top:10px;
+}
+label{
+    margin-bottom: 4px;
+}
+select{
+ border-radius: 0.5rem;
+ margin-left: 1rem;
+ padding: 0.4rem;
+ width: 20%;
+}
+.btn{
+    margin-top: 10px;
+    width: 20%;
+}
+select{
+    width: 40%;
+}

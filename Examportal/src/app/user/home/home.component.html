@@ -1,0 +1,8 @@
+<div class="home-body">
+    <app-nav (sidenavToggled)="sidenavStatus= $event"></app-nav>
+    <app-side  [sidenavStatus]="sidenavStatus" [ngClass]="{
+        sidenav: ! sidenavStatus
+    }"></app-side>
+    <app-body></app-body>
+</div>
+

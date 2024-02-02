@@ -1,0 +1,72 @@
+<div class="category-body">
+    <div class="back-button" (click)="back()">
+      <span class="material-symbols-outlined"  style="font-size: 1.8rem; cursor: pointer;">
+        arrow_back_ios
+        </span>
+    </div>
+    
+    <div class="category-form">
+     <h1 class="text-center" style="font-size: 2rem;"> <b>Add Category</b> </h1>
+      <form class="Category-form" [formGroup]="addCategoryForm">
+        <div class="row mb-3">
+          <label for="inputEmail3" class="col-sm-2 col-form-label" style="font-size:1rem;"  ><b>Title</b></label>
+          <div class="col-sm-10">
+            <input [ngClass]="{
+              'is-invalid':controls['title'].invalid && (controls['title'].touched || controls['title'].dirty)
+            }"
+             type="text" class="form-control" formControlName="title" placeholder="Category Title" />
+             <small class="text-danger" *ngIf="controls['title'].invalid && (controls['title'].touched || controls['title'].dirty)"> <b>title is required !</b> </small>
+  
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          
+          <label for="inputPassword3" class="col-sm-2 col-form-label" style="font-size:1rem;"
+            ><b>Discription</b></label
+          >
+          <div class="col-sm-10">
+          <textarea [ngClass]="{
+            'is-invalid':controls['description'].invalid && (controls['description'].touched || controls['description'].dirty)
+          }" 
+           placeholder="Category Description" name="" class="form-control" formControlName="description"  id="" cols="30" rows="2"></textarea>
+           <small class="text-danger" *ngIf="controls['description'].invalid && (controls['description'].touched || controls['description'].dirty)"> <b>Description is required !</b></small>
+          </div>
+  
+        </div>
+        <!-- <fieldset class="row mb-3">
+          <legend class="col-form-label col-sm-2 pt-0" style="font-size:1rem;"><b>IsActive</b></legend>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input
+             
+                class="form-check-input"
+                type="radio"
+                name="isActive"
+                value="Active"
+                formControlName="isActive"
+                
+              />
+              <label class="form-check-label" for="gridRadios1" style="font-size:1rem;"> Active </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="isActive" 
+                value="Inactive"
+                formControlName="isActive"
+              />
+              <label class="form-check-label" for="gridRadios2" style="font-size:1rem;">
+                InActive
+              </label>
+            </div>
+          </div>
+  
+        </fieldset> -->
+  
+        <button type="submit" [disabled]="addCategoryForm.invalid" (click)="addCategory()" class="btn1">Add Category</button>
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,48 @@
+
+<div class="question-form-body">
+   
+<div class="question-form">
+    <div class="text-center"><h2><b>Update Question</b></h2></div>
+   <form [formGroup]="updateForm">
+    <div class="form-group">
+        <label for="content"> <b>Question</b></label>
+        <input type="text" class="form-control" formControlName="content" placeholder="Question"[(ngModel)]="questions.content">
+    </div>
+    <div class="form-group">
+        <label for="content"> <b>Option1</b></label>
+        <input type="text" class="form-control" formControlName="option1" placeholder="Option1" [(ngModel)]="questions.option1">
+    </div>
+    <div class="form-group">
+        <label for="content"> <b>Option2</b></label>
+        <input type="text" class="form-control" formControlName="option2" placeholder="Option2"[(ngModel)]="questions.option2">
+    </div>
+    <div class="form-group">
+        <label for="content"> <b>Option3:</b></label>
+        <input type="text" class="form-control" formControlName="option3" placeholder="Option3"[(ngModel)]="questions.option3">
+    </div>
+    <div class="form-group">
+        <label for="content"> <b>Option4:</b></label>
+        <input type="text" class="form-control" formControlName="option4" placeholder="Option4"[(ngModel)]="questions.option4">
+    </div>
+    <div class="form-group">
+    <label for="content"><b>Correct Option</b></label>
+    <select name="" id="" formControlName="correctOption"[(ngModel)]="questions.correctOption">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+    </select>
+    </div>
+    <div class="form-group" formGroupName="category" >
+        <label for="category"><b>Select Category:</b></label>
+        <select name="category" id="" formControlName="id" [(ngModel)]="questions.category.id">
+            <option  value="" *ngFor="let c of categoryData" [ngValue]="c.id ">{{c.title}}</option>
+        </select>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-outline-primary" (click)="updateQuestion()"> Update Question </button>
+    </div>
+   </form>
+   <!-- {{updateForm.value | json}} -->
+</div>
+</div>

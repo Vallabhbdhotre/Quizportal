@@ -1,0 +1,25 @@
+<div class="category-body">
+    <div class="text-center">
+        <h1><b>Categories</b></h1>
+    </div>
+    <div class="category-list">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th><b>Sr.No</b></th>
+                    <th><b>Title</b></th>
+                    <th><b>Description</b></th>
+                    <!-- <th><b>view Quizes</b></th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of categoryList;let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{item.title}}</td>
+                    <td>{{item.description}}</td>
+                    <!-- <td>{{item.id}}</td> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

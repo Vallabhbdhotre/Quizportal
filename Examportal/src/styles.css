@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+.sidenav {
+  width: 2.7rem;
+}
+.cont {
+  /* border: 1px solid white; */
+  margin: 0.3rem;
+  padding: 0.3rem;
+  cursor: pointer;
+  transition: all 500ms ease;
+}
+.cont:hover {
+  border-bottom: 1px solid white;
+}
+.side {
+  padding: 0.5rem;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+.fildes{
+  margin-bottom: 1rem;
+}
+
+app-side {
+  border-top: 1px solid white;
+  background-color: #212529;
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  width: 23rem;
+  overflow-x: hidden;
+  height: calc(100vh - 4rem);
+  white-space: nowrap;
+  transition: all 300ms ease;
+}
+.sidetoggled{
+  width: 2.8rem;
+}
+app-body{
+  position: absolute;
+  top: 4rem;
+  left: 2.7rem;
+  width: calc(100% - 2.7rem);
+  height: calc(100vh - 4rem);
+/* background-color: aqua; */
+}

@@ -1,0 +1,27 @@
+<div class="view-quiz-body">
+    <div class="header">
+        <div class="text-center">
+            <h1><b>Quizes</b></h1>
+        </div>
+    </div>
+    <div class="list-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th><b>Sr.No</b></th>
+                    <th><b>TItle</b></th>
+                    <th><b>Description</b></th>
+                    <th><b></b></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of quizList; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{item.title}}</td>
+                    <td>{{item.description}}</td>
+                    <td><button class="btn btn-outline-danger" (click)="playQuiz(item.id)">Play</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

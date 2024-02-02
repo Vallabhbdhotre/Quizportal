@@ -1,0 +1,25 @@
+<div class="play-quiz-body">
+    <div class="header">
+        <div class="text-center">
+            <h1><b>{{quizDetails.title}} Quiz</b></h1>
+        </div>
+    </div>
+    <!-- {{quizForm.value | json}} -->
+    <div class="list">
+       <form [formGroup]="quizForm">
+          <div  *ngFor="let item of questionList; let i=index" formArrayName="Answer">
+             <div>{{i+1}}){{item.content}}</div>
+     
+     <div><input type="radio" name="{{i}}" style="margin-right:7px;" (change)="addAnswer1(item.id,'A')"  value="A">{{item.option1}}</div>
+     <div><input type="radio" name="{{i}}" style="margin-right:7px;" (change)="addAnswer1(item.id,'B')"  value="B">{{item.option2}}</div>
+     <div><input type="radio" name="{{i}}" style="margin-right:7px;" (change)="addAnswer1(item.id,'C')"  value="C">{{item.option3}}</div>
+     <div><input type="radio" name="{{i}}" style="margin-right:7px;" (change)="addAnswer1(item.id,'D')"  value="D">{{item.option4}}</div>
+     <br>
+    
+    </div>
+
+</form>
+<button (click)="submitQuiz()" class="btn btn-outline-success">Submit</button><br>
+{{result}}
+    </div>
+</div>

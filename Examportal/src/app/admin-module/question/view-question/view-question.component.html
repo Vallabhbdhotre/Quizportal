@@ -1,0 +1,53 @@
+<div class="viewbody">
+  <div class="list-body">
+    <div class="text-center">
+      <h1 style="font-size: xx-large"><b>Questions List</b></h1>
+    </div>
+    <div class="list-body">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th scope="col"><b>Sr.No</b></th>
+            <th scope="col"><b>Questions</b></th>
+            <th scope="col"><b>Option A</b></th>
+            <th scope="col"><b>Option B</b></th>
+            <th scope="col"><b>Option C</b></th>
+            <th scope="col"><b>Option D</b></th>
+            <th scope="col"><b>Coreect Option</b></th>
+            <th scope="col"><b>Action</b></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let item of  questionList | paginate:{itemsPerPage: 6,
+                    currentPage: page,};let i=index;"
+          >
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.content }}</td>
+            <td>{{ item.option1 }}</td>
+            <td>{{ item.option2 }}</td>
+            <td>{{ item.option3 }}</td>
+            <td>{{ item.option4 }}</td>
+            <td>Option {{ item.correctOption }}</td>
+            <td>
+              <button
+                class="btn btn-outline-success"
+                (click)="updateQuestion(item.id)"
+              >
+                Update
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="text-center">
+        <button class="btn btn-outline-primary" (click)="addQuestion()">
+          Add Question
+        </button>
+      </div>
+      <div style="margin-top: 2rem;" class="text-center">
+        <pagination-controls (pageChange)="page = $event"></pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>

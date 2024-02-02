@@ -1,0 +1,225 @@
+<div class="signup-body">
+  <div class="signup-form-body">
+    <h1
+      class="text-center"
+      style="
+        font-size: 2.5rem;
+        font-weight: 500;
+        color: white;
+        margin-top: 0.6rem;
+      "
+    >
+      Signup
+    </h1>
+    <form [formGroup]="signupform">
+      <div class="form-group" style="margin: 1rem">
+        <label
+          for="userName"
+          style="
+            margin: 0.5rem;
+            font-size: 1rem;
+            color: white;
+            font-weight: 400;
+          "
+          >Username</label
+        >
+        <!-- <span class="material-symbols-outlined"> mail </span> -->
+        <input
+          [ngClass]="{
+            'is-invalid':
+              controls['userName'].invalid &&
+              (controls['userName'].touched || controls['userName'].dirty)
+          }"
+          type="text"
+          style="width: 100%"
+          class="form-control"
+          formControlName="userName"
+          placeholder="Enter Username"
+        />
+        <div
+          *ngIf="
+            controls['userName'].invalid &&
+            (controls['userName'].touched || controls['userName'].dirty)
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="controls['userName'].hasError('required')"
+            ><b>Username is Required !</b></small
+          >
+          <small
+            class="text-danger"
+            *ngIf="controls['userName'].hasError('minlength')"
+            ><b>Username must be of 4 characters !</b></small
+          >
+        </div>
+      </div>
+      <div class="form-group mb-3" style="margin: 1rem">
+        <label
+          for="firstName"
+          style="
+            margin: 0.5rem;
+            font-size: 1rem;
+            color: white;
+            font-weight: 400;
+          "
+          >FirstName</label
+        >
+        <input
+          [ngClass]="{
+            'is-invalid':
+              controls['fName'].invalid &&
+              (controls['fName'].touched || controls['fName'].dirty)
+          }"
+          type="text"
+          class="form-control"
+          formControlName="fName"
+          placeholder="Enter FirstName"
+        />
+        <small
+          *ngIf="
+            controls['fName'].invalid &&
+            (controls['fName'].touched || controls['fName'].dirty)
+          "
+          class="text-danger"
+          style="margin: 3px; font-weight: 600"
+          >FirstName is Required !</small
+        >
+      </div>
+      <div class="form-group mb-3" style="margin: 1rem">
+        <label
+          for="lastName"
+          style="
+            margin: 0.5rem;
+            font-size: 1rem;
+            color: white;
+            font-weight: 400;
+          "
+          >LastName</label
+        >
+        <input
+          [ngClass]="{
+            'is-invalid':
+              controls['lname'].invalid &&
+              (controls['lname'].touched || controls['lname'].dirty)
+          }"
+          type="text"
+          class="form-control"
+          formControlName="lname"
+          placeholder="Enter LastName"
+        />
+        <small
+          *ngIf="
+            controls['lname'].invalid &&
+            (controls['lname'].touched || controls['lname'].dirty)
+          "
+          class="text-danger"
+          style="margin: 3px; font-weight: 600"
+          >LastName is Required !</small
+        >
+      </div>
+      <div class="form-group mb-3" style="margin: 1rem">
+        <label
+          for="email"
+          style="
+            margin: 0.5rem;
+            font-size: 1rem;
+            color: white;
+            font-weight: 400;
+          "
+          >Email</label
+        >
+        <input
+          [ngClass]="{
+            'is-invalid':
+              controls['email'].invalid &&
+              (controls['email'].touched || controls['email'].dirty)
+          }"
+          type="text"
+          class="form-control"
+          formControlName="email"
+          placeholder="Enter Email"
+        />
+        <div *ngIf="controls['email'].invalid && controls['email'].touched">
+          <small
+            class="text-danger"
+            *ngIf="controls['email'].hasError('required')"
+          >
+            <b>Email is required!</b>
+          </small>
+          <small class="text-danger" *ngIf="controls['email'].hasError('email')"><b>Enter valid email !</b>
+          </small>
+        </div>
+      </div>
+      <div class="form-group mb-3" style="margin: 1rem">
+        <label
+          for="password"
+          style="
+            margin: 0.5rem;
+            font-size: 1rem;
+            color: white;
+            font-weight: 400;
+          "
+          >Password</label
+        >
+        <input
+          [ngClass]="{
+            'is-invalid':
+              controls['password'].invalid &&
+              (controls['password'].touched || controls['password'].dirty)
+          }"
+          type="password"
+          class="form-control"
+          formControlName="password"
+          placeholder="Enter Password"
+        />
+        <small
+          *ngIf="
+            controls['password'].invalid &&
+            (controls['password'].touched || controls['password'].dirty)
+          "
+          class="text-danger"
+          style="margin: 3px; font-weight: 600"
+          >Password is Required !</small
+        >
+      </div>
+      <div class="form-group mb-3" style="margin: 1rem">
+        <label
+          for="phone"
+          style="
+            margin: 0.5rem;
+            font-size: 1rem;
+            color: white;
+            font-weight: 400;
+          "
+          >Phone</label
+        >
+        <input
+          [ngClass]="{
+            'is-invalid':
+              controls['phone'].invalid &&
+              (controls['phone'].touched || controls['phone'].dirty)
+          }"
+          type="number"
+          class="form-control"
+          formControlName="phone"
+          placeholder="Enter Phone"
+        />
+        <small
+          *ngIf="
+            controls['phone'].invalid &&
+            (controls['phone'].touched || controls['phone'].dirty)
+          "
+          class="text-danger"
+          style="margin: 3px; font-weight: 600"
+          >Phone is Required !</small
+        >
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn1" (click)="onSubmit()">
+          Register
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

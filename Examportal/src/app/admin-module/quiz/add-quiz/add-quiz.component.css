@@ -1,0 +1,24 @@
+.quiz-form-body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.quiz-form{
+    width: 50%;
+    height: max-content;
+    padding:1rem;
+    position: absolute;
+    top: 4rem;
+    border: 2px solid black;
+    border-radius: 1rem;
+}
+select{
+    margin-left: 3rem;
+    padding: 0.3rem;
+    border-radius: 7px;
+    width: 20%;
+}
+.form-group{
+    margin-top: 20px;
+}

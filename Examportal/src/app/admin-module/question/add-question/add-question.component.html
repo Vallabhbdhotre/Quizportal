@@ -1,0 +1,78 @@
+<div class="question-form-body">
+  <!-- {{ addQuestionForm.value | json }} -->
+  <div class="question-form">
+    <div class="text-center">
+      <h2><b>Add Question</b></h2>
+    </div>
+    <form [formGroup]="addQuestionForm">
+      <div class="form-group">
+        <label for="content"> <b>Question</b></label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="content"
+          placeholder="Question"
+        />
+      </div>
+      <div class="form-group">
+        <label for="content"> <b>Option1</b></label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="option1"
+          placeholder="Option1"
+        />
+      </div>
+      <div class="form-group">
+        <label for="content"> <b>Option2</b></label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="option2"
+          placeholder="Option2"
+        />
+      </div>
+      <div class="form-group">
+        <label for="content"> <b>Option3:</b></label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="option3"
+          placeholder="Option3"
+        />
+      </div>
+      <div class="form-group">
+        <label for="content"> <b>Option4:</b></label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="option4"
+          placeholder="Option4"
+        />
+      </div>
+      <div class="form-group">
+        <label for="content"><b>Correct Option</b></label>
+        <select name="Correct Option" id="" formControlName="correctOption">
+          <option value="">Select Correct Option</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+        </select>
+      </div>
+      <div class="form-group" formGroupName="category">
+        <label for="category"><b>Select Category:</b></label>
+        <select name="category" id="" formControlName="id">
+          <option value="" *ngFor="let c of categoryData" [ngValue]="c.id">
+            {{ c.title }}
+          </option>
+        </select>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-outline-primary" (click)="addQuestion()">
+          Add
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

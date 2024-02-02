@@ -1,0 +1,49 @@
+<div class="dashboard-body">
+  <div
+    class="navbar navbar-expand navbar-light bg-light px-1 "
+    style="border-radius: 0.5rem; height: 3.5rem"
+  > 
+     <img  src="../../../assets/images/navlogo.png" height="60" width="60" alt="logo">
+    <div class="navbar-brand p-1">
+      <b>Examthink</b>
+    </div>
+    <div class="collapse  m-1"></div>
+    <div class="nav-item dropdown" style="font-size: 1.3rem; cursor: pointer">
+      <div class="dropdown-toggle" data-bs-toggle="dropdown">Category</div>
+      <div class="dropdown-menu mt-3">
+        <a class="dropdown-item" routerLink="../addCategory"> Add Category</a>
+        <a class="dropdown-item" routerLink="../listCategory"
+          >List Of Categories</a
+        >
+      </div>
+    </div>
+    <div class="nav-item mx-3 dropdown">
+      <div
+        class="dropdown-toggle"
+        data-bs-toggle="dropdown"
+        style="font-size: 1.3rem; cursor: pointer"
+      >
+        Questions
+      </div>
+      <div class="dropdown-menu mt-3">
+        <a class="dropdown-item" routerLink="../addQuestion">Add Questions</a>
+        <a class="dropdown-item" routerLink="../viewQuestions"
+          >List of Questions</a
+        >
+      </div>
+    </div>
+    <div class="nav-item mx-3 dropdown">
+      <div class="dropdown-toggle" data-bs-toggle="dropdown" style="font-size: 1.3rem; cursor: pointer">
+        Quiz
+      </div>
+      <div class="dropdown-menu mt-3">
+        <a routerLink="../addQuiz" class="dropdown-item">Add Quiz</a>
+        <a routerLink="../viewQuiz" class="dropdown-item">List of Quizes</a>
+
+      </div>
+    </div>
+  </div>
+  <div class="header">
+    <h1>Welcome Back!</h1>
+  </div>
+</div>

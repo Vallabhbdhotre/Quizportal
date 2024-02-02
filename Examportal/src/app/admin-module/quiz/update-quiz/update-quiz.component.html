@@ -1,0 +1,46 @@
+
+<div class="quiz-form-body">
+    {{ updateForm.value | json }}
+    <div class="quiz-form">
+      <div class="text-center">
+        <h2><b>Update Quiz</b></h2>
+      </div>
+      <form [formGroup]="updateForm">
+        <div class="form-group">
+          <label for="title"><b>Title:</b></label>
+          <input type="text" class="form-control" formControlName="title" />
+        </div>
+        <div class="form-group">
+          <label for="title"><b>Description:</b></label>
+          <input type="text" class="form-control" formControlName="description" />
+        </div>
+        <div class="form-group" formGroupName="category">
+          <label for=""><b>Select Category</b></label>
+          <select name="category" id="" formControlName="id">
+            <option *ngFor="let c of categoryList" [ngValue]="c.id">
+              {{ c.title }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group" formArrayName="questions">
+          <label for=""><b>Select Questions</b></label>
+          <ng-multiselect-dropdown
+          
+            [placeholder]="'Questions'"
+            [settings]="dropdownSettings"
+            [data]="questionList"
+            (onSelect)="addQuestion($event)"
+            (onSelectAll)="onSelectAll($event)"
+            (onDeSelect)="unSelect($event)"
+            (onDeSelectAll)="unSelectAll()"
+          >
+          </ng-multiselect-dropdown>
+        </div>
+        <div class="text-center" style="margin-top: 3rem;">
+          <button class="btn btn-outline-success" (click)="UpdateQuiz()">Update Quiz</button>
+        </div>
+      </form>
+     
+    </div>
+  </div>
+  

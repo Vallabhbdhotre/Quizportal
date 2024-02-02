@@ -1,0 +1,87 @@
+<div class="login-body">
+    <div class="form-body">
+      <h1
+        class="text-center"
+        style="font-size: 2.5rem; font-weight: 500; color: white"
+      >
+        Login
+      </h1>
+      <form [formGroup]="loginform">
+        <div class="form-group" style="margin: 1rem">
+          <label
+            for="userName"
+            style="
+              margin: 0.5rem;
+              font-size: 1rem;
+              color: white;
+              font-weight: 400;
+            "
+            >Username</label
+          >
+          <!-- <span class="material-symbols-outlined"> mail </span> -->
+          <input
+            [ngClass]="{
+              'is-invalid':
+                controls['username'].invalid &&
+                (controls['username'].touched || controls['username'].dirty)
+            }"
+            type="text"
+            style="width: 100%"
+            class="form-control"
+            formControlName="username"
+            placeholder="Enter Username"
+          />
+          <small
+            *ngIf="
+              controls['username'].invalid &&
+              (controls['username'].touched || controls['username'].dirty)
+            "
+            class="text-danger"
+            style="margin: 3px; font-weight: 600"
+            >Username is Required !</small
+          >
+        </div>
+        <div class="form-group mb-3" style="margin: 1rem">
+          <label
+            for="password"
+            style="
+              margin: 0.5rem;
+              font-size: 1rem;
+              color: white;
+              font-weight: 400;
+            "
+            >Password</label
+          >
+          <input
+            [ngClass]="{
+              'is-invalid':
+                controls['password'].invalid &&
+                (controls['password'].touched || controls['password'].dirty)
+            }"
+            type="password"
+            class="form-control"
+            formControlName="password"
+            placeholder="Enter Password"
+          />
+          <small
+            *ngIf="
+              controls['password'].invalid &&
+              (controls['password'].touched || controls['password'].dirty)
+            "
+            class="text-danger"
+            style="margin: 3px; font-weight: 600"
+            >Password is Required !</small
+          >
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn1" (click)="onSubmit()">Login</button>
+        </div>
+      </form>
+      <div class="m-3">
+        <p   style="font-weight: 500; margin-left: 3rem;">Don't have an account?<a style="margin:1rem; " routerLink="/auth/signup">Create one</a>
+  
+        </p>
+      </div>
+    </div>
+  </div>
+  

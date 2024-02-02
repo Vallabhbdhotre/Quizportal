@@ -1,0 +1,14 @@
+.play-quiz-body{
+    height: 100%;
+    width:100%;
+}
+.list{
+  height: calc(100vh - 2rem);
+  width: 100%;
+  padding-left:2rem;
+  /* background-color: aqua; */
+}
+.text-center h1{
+    margin-top: 2rem;
+    font-size: xx-large;
+}

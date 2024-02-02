@@ -1,0 +1,65 @@
+<div style="height: 4rem" class="navbar navbar-expand navbar-dark bg-dark">
+  <span
+    style="color: white; font-size: 2.1rem; cursor: pointer"
+    class="material-symbols-outlined p-1"
+    (click)="sidenavtoggle()"
+  >
+    menu
+  </span>
+  <div style="color: white; font-size: x-large" class="navbar-brand">
+    Examthink
+  </div>
+  <div class="collapse navbar-collapse justify-content-end m-1">
+    <div class="cont" *ngIf="!loginservice.islogged()">
+      <div class="row g-2">
+        <div class="col-sm-1">
+          <span style="color: white" class="material-symbols-outlined"
+            >login</span
+          >
+        </div>
+        <div class="col-sm-1 mx-1">
+          <a
+            style="color: white; margin-left: 13px; text-decoration: none"
+            routerLink="../../auth/login"
+            routerLinkActive="active"
+          >
+            Login
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="cont" *ngIf="!loginservice.islogged()">
+      <div class="row g-2">
+        <div class="col-sm-1">
+          <span style="color: white" class="material-symbols-outlined"
+            >person</span
+          >
+        </div>
+        <div class="col-sm-1 mx-1">
+          <a
+            style="color: white; margin-left: 13px; text-decoration: none"
+            routerLink="../../auth/signup"
+            routerLinkActive="active"
+          >
+            Signup
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="cont" *ngIf="loginservice.islogged()">
+      <div class="row g-2" (click)="logout()">
+        <div class="col-sm-1">
+          <span style="color: white" class="material-symbols-outlined"
+            >logout</span
+          >
+        </div>
+        <div class="col-sm-1 mx-1">
+          <a style="color: white; margin-left: 13px"> Logout </a>
+        </div>
+      </div>
+    </div>
+    <div class="user">
+      <h3 *ngIf="userData" style="color: white">{{ userData.userName }}</h3>
+    </div>
+  </div>
+</div>

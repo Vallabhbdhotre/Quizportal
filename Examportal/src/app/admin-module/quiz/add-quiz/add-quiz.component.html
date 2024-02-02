@@ -1,0 +1,76 @@
+<div class="quiz-form-body">
+  <!-- {{ addQuizForm.value | json }} -->
+  <div class="quiz-form">
+    <div class="text-center">
+      <h2>
+        <b> {{ isEdit ? "Update " : "Add" }} Quiz</b>
+      </h2>
+    </div>
+    <form [formGroup]="addQuizForm">
+      <div class="form-group">
+        <label for="title"><b>Title:</b></label>
+        <input type="text" class="form-control" formControlName="title" />
+      </div>
+      <div class="form-group">
+        <label for="title"><b>Description:</b></label>
+        <input type="text" class="form-control" formControlName="description" />
+      </div>
+      <div class="form-group" formGroupName="category">
+        <label for=""><b>Select Category</b></label>
+        <select name="category" id="" formControlName="id">
+          <option *ngFor="let c of categoryList" [ngValue]="c.id">
+            {{ c.title }}
+          </option>
+        </select>
+      </div>
+      <ng-container *ngIf="!isEdit">
+        <div class="form-group" formArrayName="questions">
+          <label for=""><b>Select Questions</b></label>
+          <ng-multiselect-dropdown
+            [placeholder]="'Select Questions'"
+            [settings]="dropdownSettings"
+            [data]="questionList"
+            (onSelect)="addQuestion($event)"
+            (onSelectAll)="onSelectAll($event)"
+            (onDeSelect)="unSelect($event)"
+            (onDeSelectAll)="unSelectAll()"
+          >
+          </ng-multiselect-dropdown>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="isEdit">
+        <div class="form-group" formArrayName="questions">
+          <label for=""><b>Questions</b></label>
+          <ng-multiselect-dropdown
+            [placeholder]="'Select Questions'"
+            [settings]="dropdownSettings"
+            [data]="questionList"
+            [(ngModel)]="quizQuestionList"
+            (onSelect)="addQuestion($event)"
+            (onSelectAll)="onSelectAll($event)"
+            (onDeSelect)="unSelect($event)"
+            (onDeSelectAll)="unSelectAll()"
+            [ngModelOptions]="{ standalone: true }"
+          >
+          </ng-multiselect-dropdown>
+        </div>
+      </ng-container>
+      <div class="" >
+        
+        <div class="text-center " style="margin-top: 3rem" *ngIf="!isEdit">
+          <button class="btn btn-outline-success" (click)="AddQuiz()">
+            Add Quiz
+          </button>
+          <button style="margin-left: 1rem;" class=" btn btn-outline-primary "(click)="back()" >Go Back</button>
+        </div>
+        <div class="text-center" style="margin-top: 3rem;" *ngIf="isEdit">
+          <button class="btn btn-outline-success" (click)="updateQuiz()">
+            Update Quiz
+          </button>
+          <button style="margin-left: 1rem;" class=" btn btn-outline-primary " (click)="back()" >Go Back</button>
+
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

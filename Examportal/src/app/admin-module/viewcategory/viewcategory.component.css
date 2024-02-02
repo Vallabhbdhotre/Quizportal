@@ -1,0 +1,16 @@
+.view-body{
+    width: 100%;
+    height: 100%;
+    background-color:aquamarine;
+    display: flex;
+    justify-content: center;
+}
+.table{
+    padding: 1rem;
+    border: 2px solid black;
+
+}
+.view-content{
+    position: absolute;
+    top: 5rem;
+}

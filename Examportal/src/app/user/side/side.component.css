@@ -1,0 +1,10 @@
+.text:hover{
+    background-color: rgb(72, 69, 69);
+    color: black;
+}
+.active{
+    background-color: rgb(72, 69, 69); 
+}
+.text{
+    cursor: pointer;
+}
