@@ -42,12 +42,12 @@ Responsive Design:
 Ensured the application is mobile-friendly and provides a seamless user experience across various devices and screen sizes.
 Used Angular Material and custom CSS for consistent and aesthetically pleasing UI components.
 
-6)State Management:
+6) State Management:
 Managed application state efficiently using services and state management libraries like NgRx.
 Ensured data consistency and simplified complex state interactions across different components.
 
 
-7)Testing and Debugging:
+7) Testing and Debugging:
 Wrote unit tests using Jasmine and Karma to ensure the reliability and robustness of the application.
 Utilized Angular's debugging tools and practices to identify and resolve issues quickly.
 
